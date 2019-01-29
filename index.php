@@ -14,5 +14,5 @@ echo '<h2>Labas</h2>';
 <h2>Labas</h2>
 
 <?php
-echo (2+4);
+echo (2+4*3);
 echo '(2+4)';
