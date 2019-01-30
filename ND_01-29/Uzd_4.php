@@ -6,7 +6,7 @@ $zvakes_kaina = 1;
 if ($zvakiu_kiekis>2000) {
     $zvakes_kaina = $zvakes_kaina * 0.96;
 }
-if (($zvakiu_kiekis>1001) && ($zvakiu_kiekis<2001)) {
+elseif ($zvakiu_kiekis>1001) {
     $zvakes_kaina = $zvakes_kaina * 0.97;
 }
 
