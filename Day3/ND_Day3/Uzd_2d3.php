@@ -23,3 +23,17 @@ while ($nr<301) {
 }
 
 echo '<h3>Skaitmenų virš 150 skaičius</h3> '.$virs150_skaicius;
+
+echo "<br>------------------------------------------------------------<br>";
+echo "<h1>Uždavinys 2 II variantas </h1><br><br>";
+
+$count = 0;
+for ($x = 1; $x <= 300; $x++) {
+    $sk = rand(0,300);
+    echo $sk.' ';
+    if($sk > 150) $count++;
+    if($sk > 275) {
+        echo '<b style="color:red;">'.$sk.' '.'</b>';
+    }
+}
+echo '<h3>Skaitmenų virš 150 skaičius</h3> '.$count;
