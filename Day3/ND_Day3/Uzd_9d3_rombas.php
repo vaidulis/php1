@@ -16,13 +16,15 @@ for ($y = 1; $y <= 21; $y++){
     echo '<br>';
 }
 
-echo (22-abs(-12));
 
 echo '--------------------------------------------------------------------------------<br><br>';
 for ($y = 1; $y <= 21; $y++){
     for ($x = 1; $x <= 21; $x++){
         if(abs(11-$y)<$x && $x<22-abs(11-$y)){
-            echo "<p style='line-height: 33%; display:inline;'>*</p>";
+            $r = rand(0,255);
+            $g = rand(0,255);
+            $b = rand(0,255);
+            echo "<p style='line-height: 33%; color:rgb($r, $g, $b); display:inline;'>*</p>";
      }
         else echo "<p style='line-height: 33%; display:inline; color:white;'>*</p>";
     }
