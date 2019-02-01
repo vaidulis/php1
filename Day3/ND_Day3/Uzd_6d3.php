@@ -14,6 +14,13 @@ while (($petras_score<=222)&&($kazys_score<=222)) {
 }
 echo 'Petro taškai: ' .$petras_score .'<br>';
 echo 'Kazio taškai: ' .$kazys_score;
+if ($petras_score > $kazys_score) {
+    echo '<br> Laimėjo Petras';
+}
+elseif($petras_score < $kazys_score){
+    echo '<br> Laimėjo Kazys';
+}
+else echo '<br> LYGIOSIOS';
 
 
 
