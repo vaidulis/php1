@@ -20,8 +20,6 @@
 <body>
 
 <?php
-
-
 $zverys = $_POST["zverys"] ?? "";
 $zverys1 = $_POST["zverys1"] ?? "";
 $zverys2 = $_POST["zverys2"] ?? "";
@@ -37,8 +35,6 @@ if(($zverys2)&&($zverys2=="vilkas")){
     $teisingas_atsakymas++;
 }
 ?>
-
-
 <h1>APKLAUSA</h1>
 <form action="" method="post">
 <?php
