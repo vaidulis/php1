@@ -25,8 +25,7 @@ label {
     display: flex;
     width: 550px;
     flex-wrap: wrap;
-    /* border-style: solid;
-    border-width: 5px; */
+
 }
 .green { 
     color: green;
@@ -76,9 +75,10 @@ shuffle($galery);
 
 ?>
 
-<h1>PARINKITE TOS PAČIOS LYTIES NUOTRAUKAS</h1>
+
 <h2>NUOTRAUKOS PAVYZDYS</h2>
 <img src="img/<?php echo $galery[0][0] ?>.jpg">
+<h2>PARINKITE TOS PAČIOS LYTIES NUOTRAUKAS</h2>
 
 <form action="" method="post">
     <div class="container">     
@@ -130,10 +130,7 @@ shuffle($galery);
     // echo $test_vyr .' vyr <br>';
     // echo $test_mot .' mot <br>';
     
-if($test_vyr == $sum_check){
-    echo '<h3 class="green">ESI ŽMOGUS</h3>';
-}
-elseif($test_mot == $sum_check){
+if(($test_vyr == $sum_check)||($test_mot == $sum_check)){
     echo '<h3 class="green">ESI ŽMOGUS</h3>';
 }
 else echo '<h3 class="red">ESI ROBOTAS</h3>';
