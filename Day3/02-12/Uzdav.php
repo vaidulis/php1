@@ -52,10 +52,20 @@
             if($_POST['page'] == 3){
                 echo 'Trecias skaicius: ' .$skaicius3;
             }
-            die('Baigesi');
+            // die('Baigesi');
         }
         
     ?>
+     <br>
+    /////////////////////////////UZDAVINYS 3////////////////////////////////////////<br><br>
+
+    <form action="" method="POST">
+        <button type="submit" value="1" name="page">Pirmas puslapis</button><br><br>
+        <button type="submit" value="2" name="page">Antras puslapis</button><br><br>
+        <button type="submit" value="3" name="page">Trecias puslapis</button><br><br>
+    
+    </form>
+<br>
 
 
     </body>
