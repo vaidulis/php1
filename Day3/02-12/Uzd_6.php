@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -19,23 +18,20 @@ if(!empty($_POST)){ //jeigu siunciam
 }   
 ?>
 <!-- prisijungimo forma -->
-    <h2>PRISIJUNKITE</h2>
-    <form action="" method="POST">
-        Name: <input type="text" value="<?php echo $vardas ?>" name="vardas"> <?php 
+<h2>PRISIJUNKITE</h2>
+<form action="" method="POST">
+    Name: <input type="text" value="<?php echo $vardas ?>" name="vardas">
+    <?php 
 
         if(!($vardas)) echo '<p style="color:red;">įveskite vardą</p>' 
         
         ?> <br><br>
-        Password: <input type="password" value="<?php echo $password ?>" name="password"><?php
+    Password: <input type="password" value="<?php echo $password ?>" name="password">
+    <?php
         if(!($password)) echo '<p style="color:red;">įveskite slaptažodį</p>' 
         ?><br><br>
-        <button type="submit" value="1" name="prisijungti">Prisijungti</button><br><br>
-        <!-- <input type="hidden" name="" value=""> 
+    <button type="submit" value="1" name="prisijungti">Prisijungti</button><br><br>
+    <!-- <input type="hidden" name="" value=""> 
         <input type="hidden" name="" value="">
         <input type="hidden" name="" value="">    -->
-    </form>
-
-
-
-
-
+</form>
