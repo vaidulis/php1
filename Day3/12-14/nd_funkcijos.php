@@ -1,5 +1,6 @@
 <?php
 session_start();
+define('DIR', __DIR__.'/');
 // 4. Sukurti programą:
 // a) Login forma
 // b) Vartotojo sukūrimas (vardas, el. paštas, slaptažodis)
@@ -7,28 +8,52 @@ session_start();
 // d) Vartotojo redagavimas
 // e) Vartotojų sąrašas
 
-$_SESSION['duombaze'] = array(array("name"=>"petras","email"=>"petras@email.com", "pass"=>"petris"));
+// $_SESSION['duombaze'] = array(array("name"=>"petras","email"=>"petras@email.com", "pass"=>"petris"));
+// echo '<pre>';
+// print_r($_SESSION['duombaze']);
+
+// visus ivestus duomenis irasome i txt faila
+if(isset($_POST['registr'])){
+    // $file = fopen('db.txt', 'a') or die('file not open');
+    $file = 'db.txt';
+    $struktura = $_POST['name1'].', '.$_POST['email'].', '.$_POST['pass'];
+    file_put_contents($file, $struktura . "\r\n", FILE_APPEND);
+    // fwrite($file, $struktura) or die('Data not write');
+    // fclose($file);
+    // array_push($_SESSION['duombaze'], array("name"=>$_POST['name1'],"email"=>$_POST['email'], "pass"=>$_POST['pass']));
+    
+    // echo '<pre>';
+    // print_r($_SESSION['duombaze']);
+    }
+//txt faila perrasom i masyva
+$file = DIR.'db.txt';
+$lines = file($file);
+// var_dump($lines);
+foreach($lines as $line){
+    $var = explode(',', $line);
+    $arr_db[] = $var; 
+}
+$_SESSION['duombaze'] = array($arr_db);
 // echo '<pre>';
 // print_r($_SESSION['duombaze']);
 
 
-if(isset($_POST['registr'])){
-    array_push($_SESSION['duombaze'], array("name"=>$_POST['name1'],"email"=>$_POST['email'], "pass"=>$_POST['pass']));
-    
-    // echo '<pre>';
-    // print_r($_SESSION['duombaze']);
-}
+//tikrinam prisijungimo passworda
 if(isset($_POST['login'])) {// jeigu siunciam
-    $db_name = array_search($_POST['name'], array_column($_SESSION['duombaze'], 'name'));
-    $db_pass = array_search($_POST['pass'], array_column($_SESSION['duombaze'], 'pass'));
-    if($_POST['name'] == $db_name && $_POST['pass'] == $db_pass) {// tai tikrinam
-        $_SESSION['login'] = 1;//jei teisinga pasizymim sesijoj
-        header('Location: nd_funkcijos.php?page=1'); //nurodom narsyklei kur
-        die();
+    foreach($_SESSION['duombaze'] as $value){
+        foreach($value as $index => $val){
+            if((trim($_POST['name']) == trim($_SESSION['duombaze'][0][$index][0])) && (trim($_POST['pass']) == trim($_SESSION['duombaze'][0][$index][2]))) {// tai tikrinam
+                $_SESSION['login'] = 1;//jei teisinga pasizymim sesijoj
+                header('Location: nd_funkcijos.php?page=1'); //nurodom narsyklei kur
+                die();
+            }
+            else {
+                echo '<h1 style="color:red;">Neteisingi prisijungimo duomenys</h1>';
+            }
+        }
     }
-    else {
-        echo '<h1 style="color:red;">Neteisingi prisijungimo duomenys</h1>';
-    }
+    
+}
 
 ?>
 
@@ -70,9 +95,17 @@ if(isset($_GET['page']) && $_GET['page']=='success'){
     echo '<h4><a href="nd_funkcijos.php?page=login"> PRISIJUNKITE</a></h4>';
 }
 if(isset($_GET['page']) && $_GET['page']=='1'){ 
-    // Vartotoju sarasas
-
-    // Atsijungti
+    if($_SESSION['login'] == 1){
+        // Vartotoju sarasas
+        echo '<h2>Sveikiname prisijungus</h2>';
+        $file = fopen('db.txt', 'r') or die("file not open");
+        while(!feof($file)){
+            echo fgets($file).'<br>';
+        }
+        fclose($file);
+    }
+    else {
+        echo '<h4><a href="nd_funkcijos.php?page=login"> PRISIJUNKITE</a></h4>';
+    }
 
 }
-?>
