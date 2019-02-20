@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    color: red;
+}
+* {
+    color: rgb(58, 56, 56);
+}
+
+ul {
+    list-style: none;
+}
+
+#animacija {
+    height: 200px;
+    background: lightgrey;
+}
