@@ -15,8 +15,10 @@ define('DIR', __DIR__.'/');
 // visus ivestus duomenis irasome i txt faila
 if(isset($_POST['registr'])){
     // $file = fopen('db.txt', 'a') or die('file not open');
+    $salt = 'hahhdbiefbcvnonv';
+    $pass = md5($salt.$_POST['pass']);
     $file = 'db.txt';
-    $struktura = $_POST['name1'].', '.$_POST['email'].', '.$_POST['pass'];
+    $struktura = $_POST['name1'].', '.$_POST['email'].', '.$pass;
     file_put_contents($file, $struktura . "\r\n", FILE_APPEND);
     // fwrite($file, $struktura) or die('Data not write');
     // fclose($file);
@@ -42,7 +44,9 @@ $_SESSION['duombaze'] = array($arr_db);
 if(isset($_POST['login'])) {// jeigu siunciam
     foreach($_SESSION['duombaze'] as $value){
         foreach($value as $index => $val){
-            if((trim($_POST['name']) == trim($_SESSION['duombaze'][0][$index][0])) && (trim($_POST['pass']) == trim($_SESSION['duombaze'][0][$index][2]))) {// tai tikrinam
+            $salt = '';
+            $pass = md5($salt.$_POST['pass']);
+            if((trim($_POST['name']) == trim($_SESSION['duombaze'][0][$index][0])) && (trim($pass) == trim($_SESSION['duombaze'][0][$index][2]))) {// tai tikrinam
                 $_SESSION['login'] = 1;//jei teisinga pasizymim sesijoj
                 header('Location: nd_funkcijos.php?page=1'); //nurodom narsyklei kur
                 die();

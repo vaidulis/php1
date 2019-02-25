@@ -3,20 +3,23 @@ define('DIR', __DIR__.'/');
 require DIR.'inc/bootstrap.php';
 require DIR.'front/header.php';
 //body
-if (isset($_GET['page'])) {
-    if ($_GET['page'] == 'textarea') {
-        require DIR.'inc/text.php';
-    }
-    elseif ($_GET['page'] == 'failai') {
-        require DIR.'inc/file.php';
-    }
-    else {
-        require DIR.'inc/home.php'; 
-    }
+
+if(empty($_GET)&&empty($_POST)){
+    require DIR.'inc/index.php';
 }
-else {
-    require DIR.'inc/home.php'; 
+elseif(isset($_GET['page'])&&($_GET['page'] == 'create')&&empty($_POST)){
+    
 }
+
+
+
+
+
+
+
+
+
+
 require DIR.'front/footer.php';
 
 

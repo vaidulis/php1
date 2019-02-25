@@ -1,6 +1,6 @@
 Petras, petras@petras.lt, 123123
-Antanas, antanas@antanas.lt, 125456
-Kazys, kazys@kazys.lt, 1485668448
-kelmas, KELMAS@kelmas.cc, 511cddsd
-barzda, barzda@takas.lt, 561651
-raketa, raketa@dangus.lt, efvnf1515
+
+Antanas, antanas@antanas.lt, 47235ce9261fbf5d9dac70ceeedb36a1
+, , 2f9846be55a3d6ceed4ae4759beb8e2f
+Raketa, kasdcnsdc, 032aba5e0fea7f6854b4a82dfb164800
+, , 2f9846be55a3d6ceed4ae4759beb8e2f
