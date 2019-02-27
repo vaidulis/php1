@@ -7,6 +7,7 @@ class Programmer extends SoftwareCompany {
     public function __construct()
     {
         parent::__construct();
+        require __DIR__.'/function/randomProgramingLanguages.php';
         $skills = randomProgramingLanguages(2);
         $name = randomName();
     }
