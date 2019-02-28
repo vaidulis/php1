@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    color: red;
+}
+* {
+    color: rgb(58, 56, 56);
+}
+
+ul {
+    list-style: none;
+}
+ul .top-menu {
+    display: inline-block;
+}
+
+#animacija {
+    height: 200px;
+    background: lightgrey;
+}
+textarea {
+    width: 50vw;
+    height: 25vw;
+}
