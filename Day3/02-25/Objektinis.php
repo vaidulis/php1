@@ -48,13 +48,13 @@ $varNew = new ObjektProgr; //Naujas objektas
 
 // dc($varNew);
 
-// echo $varNew -> var;
-// $varNew -> var = 'Labas Vakaras';
-// echo '<br>';
-// echo $varNew -> h1();
-// echo '<br>';
+// // echo $varNew -> var;
+// // $varNew -> var = 'Labas Vakaras';
+// // echo '<br>';
+// // echo $varNew -> h1();
+// // echo '<br>';
 // $kitas = new ObjektProgr;
-// echo $kitas->kiausiniai;
+// echo $kitas->getKiausiniai;
 // echo '<br>';
 
 ?> ////////////////////////////////////////////////////////////////////////////////////////////////<br><?php
@@ -65,7 +65,7 @@ class Receptas { //// TEVAS
     public $kazkas = 'labas visi';
     public function getDruska()
     {
-        return $this->$druska;
+        return $this->druska;
     }
     public function setDruska($kiekis)
     {

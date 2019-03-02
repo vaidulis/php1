@@ -1,5 +1,4 @@
 <?php
-namespace Company;
 
 function randomName(){
     $length = rand(5,12);

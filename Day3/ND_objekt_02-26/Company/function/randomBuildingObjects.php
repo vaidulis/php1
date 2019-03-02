@@ -1,5 +1,4 @@
 <?php
-namespace Company;
 
 function randomBuildingObjects($no){
     $objects = array('Houses ', 'Bridges ', 'Offices ', 'Roads ', 'Gardens ', 'Railroads ', 'Canals ', 'Aqueduct ', 'Stadions ');

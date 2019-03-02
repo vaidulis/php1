@@ -2,16 +2,16 @@
 namespace Company;
 
 class Builder extends ConstructionCompany {
-    protected $buildName, $skills;
+    protected $buildName, $skills;    
     public function __construct()
     {
+        require_once __DIR__.'/function/randomBuilderSkills.php';
         parent::__construct();
-        require __DIR__.'/function/randomName.php';
-        require __DIR__.'/function/randomBuildingObjects.php';
-        $buildName = randomName();
-        $skills = randomBuildingObjects(1);
+        $this->buildName = randomName();
+        $this->skills = randomBuilderSkills(1);
     }
-    public function printInfo() {
+    public function printInfo() 
+    {
         echo 'Builder name: '.$this->buildName;
         echo '<br> Skills: '.$this->skills;
         echo '<br> Objects: '.$this->buildingObjects;
