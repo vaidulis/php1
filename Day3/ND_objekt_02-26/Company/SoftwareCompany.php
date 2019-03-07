@@ -9,7 +9,7 @@ class SoftwareCompany extends Company {
         parent::__construct();
         require_once __DIR__.'/function/randomProgramingLanguages.php';
         $this->programingLanguages = randomProgramingLanguages(3);
-        $this->skillsArray=implode('',array($languageArray[0], $languageArray[1]));
+        $this->skillsArray=implode('',randomProgramingLanguages());
     }
 }
 
